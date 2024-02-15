@@ -1,0 +1,37 @@
+.h2o-jackpot-section {
+  padding-bottom: clamp(30px, 3.1373vw, 40px);
+  border-radius: 6px;
+  overflow: hidden;
+
+
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(/static/img/index/bg_left2.png) left top/contain
+            no-repeat,
+          url(/static/img/index//bg_right_top.png) right top/contain no-repeat,
+          url(/static/img/index//bg_right_bottom.png) right bottom/contain
+            no-repeat,
+            rgba(var(--bg-e),1.0);
+    }
+
+    @include tablet{
+        width: calc(100% + (var(--container-offset) * 2));
+        margin-left: calc(var(--container-offset) * -1);
+        padding-left: var(--container-offset);
+    }
+  }
+}

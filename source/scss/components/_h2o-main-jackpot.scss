@@ -1,0 +1,60 @@
+.h2o-main-jackpot{
+    padding: 30px 75px 75px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(15px, 3.5294vw, 45px);
+    align-items: center;
+    justify-content: center;
+
+    @include tablet{
+        padding: 30px 0 75px;
+    }
+
+    &__label{
+        font-size: 14px;
+        line-height: 35px;
+        font-weight: 600;
+        font-style: normal;
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),1.0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 18px;
+        background: rgba(var(--bg-e),1.0);
+        transform: skew(-30deg, 0);
+        border-right: 2px solid var(--br-d);
+        border-bottom: 2px solid var(--br-d);
+        border-radius: 6px 4px 4px 0;
+
+        span{
+            display: flex;
+            align-items: center;
+            grid-gap: 10px;
+            transform: skew(30deg, 0);
+        }
+    }
+
+    &__total{
+        padding-top: clamp(20px, 7.0588vw, 90px);
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-style: italic;
+        font-size: clamp(44px, 6.2745vw, 80px);
+        line-height: 1;
+        color: rgba(var(--cl-a),1.0);
+    }
+
+    .h2o-main-button{
+        @include mobile{
+            margin-top: 30px;
+        }
+    }
+
+    .h2o-jackpot-slider{
+        @include mobile{
+            margin-bottom: 5px;
+        }
+    }
+}

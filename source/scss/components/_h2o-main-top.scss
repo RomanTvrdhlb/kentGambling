@@ -1,0 +1,20 @@
+.h2o-main-top {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &__link{
+    font-family: var(--font-family);
+    color: rgba(var(--cl-d),1.0);
+    font-weight: 600;
+    font-style: normal;
+    text-transform: unset;
+    transition: color 0.3s linear;
+    font-size: 14px;
+    line-height: 1.45;
+
+    &:hover{
+      color: rgba(var(--cl-a),1.0);
+    }
+  }
+}

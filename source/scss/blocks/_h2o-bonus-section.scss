@@ -1,0 +1,9 @@
+.h2o-bonus-section{
+    padding-bottom: 30px;
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+}

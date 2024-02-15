@@ -1,0 +1,9 @@
+.h2o-stock-section{
+    padding-bottom: clamp(20px, 2.4194vw, 30px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(20px, 2.4194vw, 30px);
+    }
+}

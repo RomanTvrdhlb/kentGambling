@@ -1,0 +1,310 @@
+.h2o-icon {
+  &-logo {
+    background-image: url(../img/sprite/logo.svg);
+    width: 114px;
+    height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+  }
+
+  &-footer{
+    background-image: url(../img/sprite/logo-f.svg);
+    width: 184px;
+    height: 33px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+  }
+
+  &-gc{
+    background-image: url(../img/index/license.png);
+    width: 123px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+  }
+
+  &-search {
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-image: url(../img/sprite/search.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-fire {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/fire.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-guru {
+    width: clamp(101px, 16.3922vw, 209px);
+    height: clamp(45px, 7.2941vw, 93px);
+    display: block;
+    background-image: url(../img/sprite/guru.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-ask {
+    width: clamp(101px, 20.4706vw, 261px);
+    height: clamp(23px, 4.7843vw, 61px);
+    display: block;
+    background-image: url(../img/sprite/ask.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-aff {
+    width: clamp(101px, 22.6667vw, 289px);
+    height: clamp(20px, 4.4706vw, 57px);
+    display: block;
+    background-image: url(../img/sprite/aff.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-visa {
+    width: clamp(92px, 8.2353vw, 105px);
+    height: clamp(30px, 2.6667vw, 34px);
+    display: block;
+    background-image: url(../img/sprite/visa.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-master {
+    width: clamp(38px, 3.5294vw, 45px);
+    height: clamp(30px, 2.7451vw, 35px);
+    display: block;
+    background-image: url(../img/sprite/master.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-ng {
+    width: clamp(21px, 1.9608vw, 25px);
+    height: clamp(30px, 2.7451vw, 35px);
+    display: block;
+    background-image: url(../img/sprite/ng.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-eco {
+    width: 105px;
+    height: 25px;
+    display: block;
+    background-image: url(../img/sprite/eco.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-astro {
+    width: 105px;
+    height: 27px;
+    display: block;
+    background-image: url(../img/sprite/astro.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-btc {
+    width: 105px;
+    height: 23px;
+    display: block;
+    background-image: url(../img/sprite/btc.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-eth {
+    width: 105px;
+    height: 25px;
+    display: block;
+    background-image: url(../img/sprite/eth.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-lite {
+    width: 105px;
+    height: 23px;
+    display: block;
+    background-image: url(../img/sprite/lite.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-teth {
+    width: clamp(92px, 8.2353vw, 105px);
+    height: clamp(30px, 2.6667vw, 34px);
+    display: block;
+    background-image: url(../img/sprite/teth.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-crown {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/crown.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-tg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url(../img/sprite/tg.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    position: relative;
+    &::after{
+      position: absolute;
+      content: '';
+      inset: -2px;
+      background-color: rgba(var(--bg-e),1.0);
+      transition: all .3s linear;
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &:hover{
+        &::after{
+          opacity: 1;
+        }
+    }
+  }
+
+  &-age {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-image: url(../img/sprite/age.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-aviatrix {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/aviatrix.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-netent {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/netent.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-relax {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/relax.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-btg {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/btg.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-nova {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/novomatic.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-turbo {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/turbo.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-hacksaw {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/hack.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-smartsoft {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/smartsoft.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-kalamba {
+    width: 125px;
+    height: 40px;
+    display: block;
+    background-image: url(../img/sprite/kalamba.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+}

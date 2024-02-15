@@ -1,0 +1,18 @@
+.h2o-footer-links{
+    display: flex;
+    align-items: center;
+
+    &__item{
+        display: flex;
+        align-items: center;
+        padding: 0 clamp(20px, 3.1373vw, 40px);
+        border-right: 2px solid transparent;
+        border-image: var(--border-gr);
+        border-image-slice: 1;
+        transform: skew(-10deg, 0);
+    }
+
+    &__btn{
+        transform: skew(10deg);
+    }
+}

@@ -1,0 +1,130 @@
+.h2o-bonus-slider {
+  position: relative;
+  min-height: 274px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  @include mobile{
+    min-height: initial;
+    max-height: clamp(170px, 34.722vw, 200px);
+  }
+ 
+  &__button {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+  }
+
+  &__slide {
+    overflow: hidden;
+    border-radius: 15px;
+    display: block;
+    min-height: 274px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 10px -12px 20px 0 #00000026;
+    margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 3)) * -1);
+
+    @media (min-width: (1930px)) {
+        margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 2)) * -1);  
+    }
+
+    @media (min-width: (2300px)) {
+        margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 1.55)) * -1);  
+    }
+
+    &:not(.is-active){
+        .h2o-bonus-slider__box{
+            transform: translateX(10%);
+        }
+    }
+
+    &:hover{
+        .h2o-bonus-slider__box::before{
+            opacity: .5;
+        }
+    }
+
+    &.is-prev{
+        transition: all .2s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.is-active {
+      z-index: 30 !important;
+
+      &::before{
+        display: none;
+      }
+
+      .h2o-bonus-slider{
+        &__box{
+            transform: translateX(0);
+
+            &::before{
+                opacity: 0;
+            }
+        }
+
+        &__image{
+            img,
+            picture {
+              object-position: left;
+            }
+        }
+      }
+    }
+
+    @include mobile{
+        min-width: 200px;
+    }
+  }
+
+  &__box {
+    height: 100%;
+    transition: all .6s;
+    border-radius: 15px;
+    overflow: hidden;
+
+    &::before{
+        background: rgba(var(--bg-o),.451);
+        border-radius: 15px;
+        bottom: 0;
+        content: "";
+        left: 0;
+        outline: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: opacity .2s ease;
+    }
+
+    @include mobile{
+        max-height: clamp(170px, 34.722vw, 200px);
+      }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    img,
+    picture {
+        max-width: 680px;
+        max-height: 274px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    img,
+    picture {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

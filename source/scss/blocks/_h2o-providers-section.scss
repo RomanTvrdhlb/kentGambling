@@ -1,0 +1,9 @@
+.h2o-providers-section{
+    padding-bottom: clamp(40px, 4.7059vw, 60px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+}

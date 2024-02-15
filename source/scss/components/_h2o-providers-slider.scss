@@ -1,0 +1,13 @@
+.h2o-providers-slider{
+    width: 100%;
+    
+    @include small-tablet{
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        padding-left: 16px;
+    }
+
+    &__wrapp{
+        padding: 12px 2px!important;
+    }
+}

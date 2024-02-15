@@ -1,0 +1,40 @@
+.h2o-header{
+  width: 100%;
+  padding: 10px 0;
+  // background-color: #250714;
+  position: fixed;
+  top: 0;
+  z-index: 80;
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    background: #18040d;
+  }
+
+  &.sticky {
+    // box-shadow: 0 11px 25px rgba(66, 140, 220, 0.631372549);
+  }
+
+  &__box{
+    min-height: clamp(60px, 5.3333vw, 68px);
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+  }
+
+  &__btns{
+    display: flex;
+    align-items: center;
+    grid-gap: 5px;
+  }
+}
+
+
+

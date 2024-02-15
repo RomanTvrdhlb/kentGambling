@@ -1,0 +1,47 @@
+.h2o-pay-list{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include small-tablet{
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            display: flex;
+            cursor: pointer;
+          }
+        
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(var(--bg-d),.55);
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 15px;
+
+          }
+        
+          &::-webkit-scrollbar-track {
+            background-color: rgba(var(--bg-c),1.0);
+            border-radius: 15px;
+
+          }
+        
+          &::-webkit-scrollbar-button {
+            display: none;
+            background-color: transparent;
+            box-shadow: none;
+          }
+    }
+
+    &__icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(1px, 1.5686vw, 20px) clamp(15px, 1.5686vw, 20px);
+    }
+}

@@ -1,0 +1,17 @@
+.h2o-footer-ratings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: clamp(20px, 4.7059vw, 60px);
+
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__btn{
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,176 @@
+.h2o-jackpot-card{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    width: 100%;
+
+    &:hover{
+
+        .h2o-jackpot-card{
+
+            &__inner{
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &__label{
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &__total{
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &__box{
+                &::before{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &__box{
+        height: 139px;
+        position: relative;
+        padding: 0 0 15px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 6px;
+
+        &::before{
+            content: '';
+            transition: all 0.2s linear;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 108%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 44.56%, #fff 77.95%);
+        }
+    }
+
+    &__btn{
+        display: flex;
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+    }
+
+    &__link{
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),1.0);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    &__inner{
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        grid-gap: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .2s linear;
+    }
+
+    &__image{
+        position: absolute;
+        inset: 0;
+
+        img,picture{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__total{
+        transition: all .2s linear;
+        font-family: var(--font-family);
+        color: rgba(var(--cl-d),1.0);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+        z-index: 3;
+        position: relative;
+    }
+
+    &__label{
+        transition: all .2s linear;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        padding: 0 18px;
+        color: rgba(var(--cl-d),1.0);
+        font-weight: 600;
+        font-size: 1.2rem;
+        line-height: 35px;
+        background: rgba(var(--bg-a),1.0);
+        transform: skew(-30deg, 0);
+        border-radius: 6px 4px 4px 0;
+        border-right: 2px solid var(--br-b);
+        border-bottom: 2px solid var(--br-b);
+
+        *{
+            font-family: var(--font-family);
+            color: rgba(var(--cl-d),1.0);
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 35px;
+            display: inline-block;
+            transform: skew(30deg, 0);
+        }
+
+        &::before{
+            position: absolute;
+            content: '';
+            height: 50%;
+            width: 20px;
+            left: 0;
+            top: 0;
+            transform: translateX(-60%);
+            background: rgba(var(--bg-a),1.0);
+        }
+    }
+
+    &__wrapp{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title{
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),1.0);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.45;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__subtitle{
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),.6);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.45;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

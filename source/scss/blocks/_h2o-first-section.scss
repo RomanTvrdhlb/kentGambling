@@ -1,0 +1,43 @@
+.h2o-first-section {
+  position: relative;
+  margin:-20px 0 30px;
+  min-height: 370px;
+
+  @include for-big-desktop {
+    min-height: 460px;
+  }
+
+  @media (max-width: (1300px)) {
+    min-height: clamp(205px, 20.577vw, 300px);
+  }
+
+  @include tablet{
+    min-height: initial;
+  }
+
+  &__box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+  }
+
+  &__inner{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+
+    @include tablet{
+      display: flex;
+
+      .h2o-search-form{
+        padding: 0;
+        
+        &__input{
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
