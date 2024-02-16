@@ -1,22 +1,17 @@
-.h2o-games-section{
+.h2o-loyalty-section{
     padding-bottom: clamp(30px, 3.1373vw, 40px);
 
     &__box{
         display: flex;
         flex-direction: column;
-        grid-gap: 20px;
+        grid-gap: 10px;
 
         .h2o-main-top{
-            margin-bottom: 10px;
             padding-right: calc((clamp(35px, 3.1373vw, 40px) * 2) + 20px);
 
             @include small-tablet{
                 padding-right: 0;
             }
-        }
-        
-        .h2o-main-nav{
-            margin-bottom: clamp(20px, 3.1373vw, 40px);
         }
     }
 }

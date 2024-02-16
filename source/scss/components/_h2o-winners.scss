@@ -1,0 +1,58 @@
+.h2o-winners{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: clamp(55px, 4.8627vw, 62px) clamp(10px, 1.9608vw, 25px) clamp(15px, 1.9608vw, 25px);
+
+    &__bg{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+    }
+
+    &__item{
+        &:not(:last-child){
+        border-bottom: solid 1px var(--br-a);
+    }
+}
+
+    &__label{
+        transform: skew(-30deg, 0);
+        border-right: 2px solid var(--br-d);
+        border-bottom: 2px solid var(--br-d);
+        padding: 0 18px;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: rgba(var(--bg-e),1.0);
+        border-radius: 0 4px 4px 0;
+        position: absolute;
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+        transform: skew(30deg, 0);
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),1.0);
+        font-style: normal;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        font-weight: normal;
+
+        i{
+            position: relative;
+            top: -3px;
+        }
+    }
+}

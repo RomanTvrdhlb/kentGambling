@@ -9,10 +9,15 @@ const htmlEl = document.documentElement;
 const bodyEl = document.body;
 const providersSlider = document.querySelector('.h2o-providers-slider');
 const jackpotSlider = document.querySelector('.h2o-jackpot-slider');
+const loyaltySlider = document.querySelector('.h2o-loyalty-slider');
+const timers = document.querySelectorAll('.h2o-timer');
+const gamesSlider = document.querySelector('.h2o-games-slider');
+const tournSlider = document.querySelector('.h2o-tournament-slider');
+const bonuSlider = document.querySelector('.h2o-bonus-slider');
 
 
-const bonusSliderElement = document.querySelector('.h2o-bonus-slider');
-const slides = document.querySelectorAll('.h2o-bonus-slider__slide');
+// const bonusSliderElement = document.querySelector('.h2o-bonus-slider');
+// const slides = document.querySelectorAll('.h2o-bonus-slider__slide');
 const asideMenu = document.querySelector('.h2o-sidebar');
 const asideMenuBtn = document.querySelector('.h2o-aside-button');
 const searchForms = document.querySelectorAll('.h2o-search-form');
@@ -271,6 +276,23 @@ providersSlider &&
       }
   }).mount();
 
+  bonuSlider &&
+  new Splide(bonuSlider, {
+    type: "slide",
+    perPage: 1,
+    gap: 15,
+    pagination:false,
+  }).mount();
+
+  tournSlider &&
+  new Splide(tournSlider, {
+    type: "slide",
+    perPage: 1,
+    gap: 15,
+    autoplay: true,
+    interval: 3000,
+    pagination:false,
+  }).mount();
 
   jackpotSlider && new Splide( jackpotSlider, {
     type   : 'slide',
@@ -295,36 +317,59 @@ providersSlider &&
 
   } ).mount();
 
-  
-  const bonusSlider = bonusSliderElement && new Splide(bonusSliderElement, {
-      type   : 'slide',
-      perPage: 1,
-      fixedWidth: 'clamp(540px, 35.417vw, 680px)',
-      updateOnMove: true,
-      speed: 800,
-      click: true,
-      pagination: false,
-      arrows: false,
-      drag: false,
-      mediaQuery: 'max',
-      breakpoints: {
-        1240: {
-          perPage: '1',
-          gap: 10,
-          fixedWidth: '100%',
-          drag: true,
-        }
+  loyaltySlider && new Splide( loyaltySlider, {
+    type   : 'slide',
+    perPage: 5,
+    speed: 1500,
+    gap: 20,
+    pagination:false,
+    mediaQuery: 'max',
+    breakpoints: {
+      1024: {
+        perPage: 4,
+       
+      },
+      768: {
+        perPage: 3,
+        arrows: false,
+      },
+      576: {
+        perPage: 2,
+        fixedWidth: '180px'
       }
-  }).mount();
+    }
 
-  bonusSliderElement && slides.forEach((slide, index) => {
-    slide.style.zIndex = slides.length - index;
-    slide.addEventListener('click', () => {
-      bonusSlider.go(index >= slides.length - 3 ? 0 : index);
-  });
-});
+  } ).mount(); 
 
+  gamesSlider && new Splide( gamesSlider, {
+    type   : 'slide',
+    perPage: 5,
+    speed: 1500,
+    gap: 20,
+    // pagination:false,
+    // mediaQuery: 'max',
+    // grid: {
+    //   rows: 2,
+    //   cols: 5,
+    // },
+    
+    // breakpoints: {
+    //   1024: {
+    //     perPage: 4,
+       
+    //   },
+    //   768: {
+    //     perPage: 3,
+    //     arrows: false,
+    //   },
+    //   576: {
+    //     perPage: 2,
+    //     fixedWidth: '180px'
+    //   }
+    // }
 
+  } ).mount(); 
+  
 
 //----stickyHeader------------------------------
 let lastScroll = 0;
@@ -381,3 +426,36 @@ elementHeight(header, "header-height");
 //     }
 //   }
 // })
+
+//------timer-----------------------------------
+
+
+timers && timers.forEach(function(item){  
+  const itemDate = item.getAttribute('data-time');
+  const countDownDate = new Date(itemDate).getTime();
+  
+  const x = setInterval(function() {
+    
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+  
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    
+    if(!item.classList.contains('stop')){
+      item.querySelector('.h2o-timer__days').innerText = formatedValue(days,10);
+      item.querySelector('.h2o-timer__hours').innerText = formatedValue(hours,10);
+      item.querySelector('.h2o-timer__minutes').innerText = formatedValue(minutes, 10);
+      item.querySelector('.h2o-timer__seconds').innerText = formatedValue(seconds, 10);
+  }
+  }, 1000);
+})
+
+function formatedValue(value, countValue) {
+  return value < countValue ? '0' + value : '' + value
+}
+
+//----------------------------------------------

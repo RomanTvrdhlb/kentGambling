@@ -1,0 +1,36 @@
+.h2o-timer{
+    display: flex;
+    grid-gap: 17px;
+
+    &__item{
+        display: flex;
+        align-items: center;
+        grid-gap: 5px;
+        position: relative;
+        font-family: var(--font-family);
+        color: rgba(var(--cl-a),1.0);
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1.45;
+  
+        &:not(:nth-child(1)){
+            &:after{
+                content: ':';
+                position: absolute;
+                left: -10.5px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-weight: normal;
+                line-height: 24px;
+                color: rgba(var(--cl-a),1.0);
+                font-family: var(--font-family);
+            }
+            
+        }
+    }
+  
+    &__text{
+        font-weight: normal;
+    }
+  } 

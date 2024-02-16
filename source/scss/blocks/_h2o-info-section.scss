@@ -1,0 +1,21 @@
+.h2o-info-section{
+    padding-bottom: clamp(30px, 3.1373vw, 40px);
+
+    &__box{
+        display: grid;
+        grid-template-columns: 34% 66%;
+        grid-gap: clamp(15px, 1.5686vw, 20px);
+
+        @include laptop{
+            grid-template-columns: 42% 58%;
+        }
+
+        @include tablet{
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include small-tablet{
+            grid-template-columns: 1fr;
+        }
+    }
+}

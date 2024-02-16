@@ -119,6 +119,15 @@
     &:hover{
       box-shadow: none;
     }
+
+    &--mode{
+      box-shadow: none;
+
+      &:hover{
+        background: rgba(var(--bg-f),1.0);
+        border-color: var(--br-e);
+      }
+    }
 }
 
 .h2o-white-button{
@@ -180,4 +189,6 @@
     &:hover{
       background-color: rgba(var(--bg-a),.2);
     }
+
+ 
 }

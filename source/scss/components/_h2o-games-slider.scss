@@ -1,22 +1,32 @@
-.h2o-jackpot-slider{
-    padding: 0 clamp(20px, 4.7059vw, 60px);
-    border-radius: 6px;
+.h2o-games-slider{
     width: 100%;
 
     @include tablet{
-        padding: 0;
         width: calc(100% + (var(--container-offset) * 2));
         margin-left: calc(var(--container-offset) * -1);
-       
     }
+
 
     &__wrapp{
         @include tablet{
-            padding: 0 calc((var(--container-offset) / 2) + var(--container-offset)) !important;
+            padding: 0 var(--container-offset) !important;
         }
     }
 
     .splide{
+        &__arrows{
+            display: flex;
+            grid-gap: 5px;
+            position: absolute;
+            top: calc((clamp(35px, 3.1373vw, 40px) / 2) * -1);
+            right: 0;
+            transform: translateY(-103%);
+
+            @include tablet{
+                top: -21px;
+            }
+        }
+
         &__arrow{
             transition: all 0.3s linear;
             display: flex;
@@ -25,10 +35,11 @@
             width: clamp(35px, 3.1373vw, 40px);
             height: clamp(35px, 3.1373vw, 40px);
             color: rgba(var(--cl-a),1.0);
-            background: rgba(var(--bg-a),.3);
+            background-color: rgba(var(--bg-a),.1);
             border-radius: 2px;
-            transform: skew(-10deg, 0) translateY(-50%);
+            transform: skew(-10deg, 0);
             opacity: 1;
+            position: static;
 
             svg{
                 transform: skew(10deg);
@@ -38,7 +49,7 @@
                 opacity: .5;
             }
             &:hover{
-                background: rgba(var(--bg-a),.5);
+                background: rgba(var(--bg-a),.2);
             }
 
             &--prev{

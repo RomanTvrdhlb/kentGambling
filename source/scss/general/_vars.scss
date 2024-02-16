@@ -67,7 +67,7 @@
   --bg-f: #{HexToRGB(#ff3385)}; // rgba(var(--bg-f),1.0);
 
 
-  --bg-g: #{HexToRGB(#fa4d00)}; // rgba(var(--bg-g),1.0);
+  --bg-g: #{HexToRGB(#ff3385)}; // rgba(var(--bg-g),1.0);
   --bg-h: #{HexToRGB(#003266cc)}; // rgba(var(--bg-h),1.0);
   --bg-i: #{HexToRGB(#003266)}; // rgba(var(--bg-i),1.0);
   --bg-j: #{HexToRGB(#115ba9)}; // rgba(var(--bg-j),1.0);
@@ -82,9 +82,10 @@
   --br-b: #f06; // var(--br-b);
   --br-c: #fff; // var(--br-c);
   --br-d: #19040d; // var(--br-d);
+  --br-e: #ff3385; // var(--br-e);
 
 
-  --br-e: #0d4177; // var(--br-e);
+
   --br-f: #003266; // var(--br-f);
   --br-g: #115ba9; // var(--br-g);
   --br-h: #428cdc; // var(--br-h);
@@ -102,9 +103,10 @@
 // --------------- default gradient color variable ---------------
 --gr-a: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent); // var(--gr-a);
 --gr-b: linear-gradient(265deg, #00f0ff 0%, #6100ff 100%); // var(--gr-b);
+--gr-c: linear-gradient(180deg, #28121b 50%, #662e45 100%); // var(--gr-c);
 
 
---gr-c: linear-gradient(0deg,#428cdc 0,#509aea 97%,#509aea); // var(--gr-c);
+
 --gr-d: linear-gradient(180deg,#428cdc 0,#509aea 97%,#509aea); // var(--gr-d);
 --gr-e: linear-gradient(180deg,#003266 90%,#00326600); // var(--gr-e);
 --gr-f: linear-gradient(to top,#00326600 0,#003266 73%,#003266 98%); // var(--gr-f);

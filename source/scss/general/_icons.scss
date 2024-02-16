@@ -169,11 +169,191 @@
     background-size: contain;
   }
 
+  &-point {
+    width: 20px;
+    height: 18px;
+    display: block;
+    background-image: url(../img/sprite/point.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
   &-crown {
     width: 20px;
     height: 20px;
     display: block;
     background-image: url(../img/sprite/crown.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-arrow {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background-image: url(../img/sprite/arrow.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-clock {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/clock.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-loyalty {
+    width: 26px;
+    height: 26px;
+    display: block;
+    background-image: url(../img/sprite/loyalty.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-like {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/like.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-box {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/box.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-briliant {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/briliant.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-palm {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/palm.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-nav {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url(../img/sprite/nav.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-filter {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/filter.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-popular {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/popular.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-tie {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/tie.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-ball {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/ball.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-rocket {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/rocket.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-gift {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/gift.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-time {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/time.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &-flag {
+    width: 24px;
+    height: 18px;
+    display: block;
+    background-image: url(../img/sprite/flag.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-tourn {
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-image: url(../img/sprite/tourn.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;

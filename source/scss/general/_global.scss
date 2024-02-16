@@ -154,16 +154,16 @@ input[type="number"] {
   padding: 0 var(--container-offset);
 }
 
-.h2o-main-inner{
-  padding: 20px 0;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 280px 1fr;
+// .h2o-main-inner{
+//   padding: 20px 0;
+//   display: grid;
+//   grid-gap: 15px;
+//   grid-template-columns: 280px 1fr;
 
-  @include tablet{
-    grid-template-columns: 1fr;
-  }
-}
+//   @include tablet{
+//     grid-template-columns: 1fr;
+//   }
+// }
 
 .panel,
 [data-content] {
