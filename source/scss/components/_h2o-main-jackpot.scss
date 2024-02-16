@@ -8,7 +8,8 @@
     justify-content: center;
 
     @include tablet{
-        padding: 30px 0 75px;
+        padding: 30px 0 clamp(30px, 7.324vw, 75px);
+        grid-gap: 25px;
     }
 
     &__label{
@@ -36,6 +37,12 @@
         }
     }
 
+    .h2o-main-button{
+        @include mobile{
+            margin-top: 10px;
+        }
+    }
+
     &__total{
         padding-top: clamp(20px, 7.0588vw, 90px);
         font-family: var(--font-family);
@@ -44,12 +51,6 @@
         font-size: clamp(44px, 6.2745vw, 80px);
         line-height: 1;
         color: rgba(var(--cl-a),1.0);
-    }
-
-    .h2o-main-button{
-        @include mobile{
-            margin-top: 30px;
-        }
     }
 
     .h2o-jackpot-slider{

@@ -72,13 +72,36 @@
 }
 
 .h2o-banner{
-  width: 100%;
-  position: relative;
+    width: Min(31.654vw, 421px);
+    height: 250px;
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: left;
     overflow: hidden;
     border-radius: 6px;
+
+    @include tablet{
+      width:clamp(230px, 33.0196vw, 421px);
+      height: 100%;
+      max-height: 250px;
+    }
+
+    @include mobile{
+      width: clamp(230px, 50.347vw, 290px);
+    }
+
+    &--mode{
+      width: Min(63.383vw, 843px);
+      margin-right: 10px;
+
+      @include tablet{
+        margin-right: 16px;
+        width: calc(100vw - 32px);
+      }
+    }
+
+    
 
     &:hover{
       &::before{
@@ -145,7 +168,6 @@
   }
 
   &__image{
-    overflow: hidden;
     border-radius: 6px;
     width: 100%;
     height: 100%;
@@ -153,6 +175,10 @@
     img,picture{
       width: 100%;
       height: 100%;
+
+      @include laptop{
+        object-position: 5% 50%;
+      }
     }
   }
 }

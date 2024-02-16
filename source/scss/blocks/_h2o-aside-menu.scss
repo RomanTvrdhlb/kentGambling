@@ -1,0 +1,47 @@
+.h2o-aside-menu{
+    z-index: 90;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    max-width: 230px;
+    padding: 10px;
+    background-color: #1b000c;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+
+    .h2o-burger{
+        display: flex;
+    }
+
+    &__top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-gap: 10px;
+    }
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: 25px;      
+    }
+
+    @include tablet{
+        position: fixed;
+        z-index: 70;
+        top: var(--header-height);
+        left: var(--container-offset);
+        transform: translateX(-130%);
+        transition: all 0.4s ease-out;
+        border-radius: 15px;
+        height: calc(100vh - (var(--header-height) + 15px));
+        overflow-y: auto;
+      
+        &.active{
+            transform: translateX(0);
+        }      
+    }
+}

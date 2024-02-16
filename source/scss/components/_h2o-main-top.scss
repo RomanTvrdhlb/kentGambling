@@ -12,6 +12,7 @@
     transition: color 0.3s linear;
     font-size: 14px;
     line-height: 1.45;
+    white-space: nowrap;
 
     &:hover{
       color: rgba(var(--cl-a),1.0);

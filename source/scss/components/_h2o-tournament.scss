@@ -1,6 +1,5 @@
 .h2o-tournament {
   padding: clamp(36px, 5.6471vw, 72px) clamp(20px, 3.1373vw, 40px) clamp(20px, 3.1373vw, 40px) clamp(20px, 3.1373vw, 40px);
-  min-height: 370px;
   position: relative;
   z-index: 2;
   display: flex;
@@ -9,14 +8,14 @@
   height: 100%;
   border-radius: 6px;
   overflow: hidden;
-  min-height: 410px;
+  min-height: clamp(370px, 32.1569vw, 410px);
 
   @include small-tablet {
     min-height: 370px;
   }
 
   @include mobile {
-    min-height: 325px;
+    min-height: 315px;
   }
 
   &::before {
@@ -44,13 +43,15 @@
   &__tag {
     background: rgba(var(--bg-e), 1);
     border-radius: 0 4px 4px 0;
-    padding: 0 18px;
+    padding: 0 clamp(10px, 1.4118vw, 18px);
     line-height: 35px;
     transform: skew(-30deg, 0);
     border-right: 2px solid var(--br-d);
     border-bottom: 2px solid var(--br-d);
     color: rgba(var(--cl-a), 1);
     position: relative;
+    font-family: var(--font-family);
+    font-size: clamp(14px, 1.2549vw, 16px);
 
     &::before {
       background: rgba(var(--bg-e), 1);
@@ -100,7 +101,6 @@
     display: flex;
     align-items: center;
     grid-gap: 10px;
-    font-size: 1.2rem;
     font-family: var(--font-family);
     color: rgba(var(--cl-a), 1);
     font-style: normal;
@@ -125,8 +125,8 @@
   &__title {
     font-family: var(--font-family);
     color: rgba(var(--cl-a), 1);
-    max-width: 350px;
-    font-size: 28px;
+    max-width: clamp(160px, 27.451vw, 350px);
+    font-size: clamp(22px, 2.1961vw, 28px);
     font-style: italic;
     line-height: 1.15;
     text-transform: uppercase;
@@ -141,6 +141,13 @@
     display: flex;
     align-items: flex-end;
     grid-gap: 20px;
+
+    @include ios{
+      width: 100%;
+      button{
+        width: 100%;
+      }
+    }
   }
 
   &__subtitle {
@@ -175,10 +182,18 @@
     justify-content: center;
     grid-gap: clamp(15px, 2.3529vw, 30px);
     width: 100%;
-    max-width: 350px;
-    padding: 24px 35px 24px;
+    max-width: clamp(250px, 27.451vw, 350px);
+    padding: clamp(18px, 1.8824vw, 24px) clamp(20px, 2.7451vw, 35px);
     background: var(--gr-b);
     box-shadow: 0 0 40px 0 rgba(62, 137, 253, 0.3);
     border-radius: 8px;
+
+    @include tablet{
+      width: fit-content;
+    }
+  }
+
+  @include tablet{
+    padding: clamp(60px, 7.031vw, 72px) 20px clamp(20px, 3.1373vw, 40px) 20px;
   }
 }

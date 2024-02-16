@@ -1,22 +1,21 @@
-.h2o-jackpot-slider{
-    padding: 0 clamp(20px, 4.7059vw, 60px);
-    border-radius: 6px;
+.h2o-banner-slider{
     width: 100%;
 
     @include tablet{
         width: calc(100% + (var(--container-offset) * 2));
-        padding: 0;
+        margin-left: calc(var(--container-offset) * -1);
     }
 
     &__wrapp{
         @include tablet{
-            padding: 0 calc(var(--container-offset) * 2) !important;
+            padding: 0 var(--container-offset) !important;
         }
     }
 
-    .splide{
+    .splide{ 
+        
         &__pagination{
-            bottom: -20px;
+            bottom: 5px;
             &__page{
                 background: rgba(var(--bg-a),1.0);
                 opacity: 0.5;
@@ -28,6 +27,7 @@
                 }
             }
         }
+        
         &__arrow{
             transition: all 0.3s linear;
             display: flex;
@@ -36,11 +36,12 @@
             width: clamp(35px, 3.1373vw, 40px);
             height: clamp(35px, 3.1373vw, 40px);
             color: rgba(var(--cl-a),1.0);
-            background: rgba(var(--bg-a),.3);
+            background-color: rgba(var(--bg-a),.1);
             border-radius: 2px;
             transform: skew(-10deg, 0) translateY(-50%);
             opacity: 1;
-
+           
+    
             svg{
                 transform: skew(10deg);
                 fill: rgba(var(--cl-a),1.0);
@@ -49,19 +50,19 @@
                 opacity: .5;
             }
             &:hover{
-                background: rgba(var(--bg-a),.5);
+                background: rgba(var(--bg-a),.2);
             }
-
+    
             &--prev{
-                left: 0;
-
+                left: 10px;
+    
                 svg{
                     transform: skew(10deg) rotate(180deg);
                 }
             }
-
+    
             &--next{
-            right: 0;
+            right: 10px;
         }
     }
     }

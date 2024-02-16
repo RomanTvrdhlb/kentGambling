@@ -15,11 +15,33 @@ footer{
     grid-template-columns: 2fr 3fr;
     grid-gap: clamp(10px, 1.6129vw, 20px);
 
+    @include small-tablet{
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
    
     .h2o-footer-nav{
       grid-column: 2;
       grid-row: 1/3;
       margin-left: clamp(20px, 3.5294vw, 45px);
+
+      @include small-tablet{
+        grid-column: initial;
+        grid-row: initial;
+        margin: 0;
+      }
+
+      @include mobile{
+        margin-bottom: 15px;
+      }
+    }
+
+    @include mobile{
+      .h2o-pink-button{
+        width: 100%;
+        max-width: 345px;
+      }
     }
   }
 
@@ -27,6 +49,15 @@ footer{
     display: flex;
     align-items: center;
     grid-gap: clamp(20px, 3.5294vw, 45px);
+
+    @include small-tablet{
+      justify-content: center;
+    }
+
+    @include mobile{
+      width: 100%;
+      flex-direction: column;
+    }
   }
   
   &__middle{
@@ -47,6 +78,10 @@ footer{
       font-weight: normal;
       font-size: 10px;
       line-height: 1.45;
+
+      @include small-tablet{
+        text-align: center;
+      }
     }
   }
 

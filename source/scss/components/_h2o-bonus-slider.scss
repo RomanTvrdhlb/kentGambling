@@ -1,130 +1,89 @@
 .h2o-bonus-slider {
-  position: relative;
-  min-height: 274px;
-  border-radius: 15px;
+  width: 100%;
   overflow: hidden;
+  border-radius: 6px;
 
-  @include mobile{
-    min-height: initial;
-    max-height: clamp(170px, 34.722vw, 200px);
-  }
- 
-  &__button {
-    position: absolute;
-    inset: 0;
-    z-index: 5;
-  }
-
-  &__slide {
-    overflow: hidden;
-    border-radius: 15px;
-    display: block;
-    min-height: 274px;
-    transition: all 0.5s ease-in-out;
-    box-shadow: 10px -12px 20px 0 #00000026;
-    margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 3)) * -1);
-
-    @media (min-width: (1930px)) {
-        margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 2)) * -1);  
+    @include for-small-tablet{
+      max-width: calc((var(--content-width) / 2));
     }
 
-    @media (min-width: (2300px)) {
-        margin-right: calc((clamp(540px, 35.417vw, 680px) - (clamp(540px, 35.417vw, 680px) / 1.55)) * -1);  
+  &--mode{
+    @include small-tablet{
+      display: none;
+    }
+  }
+
+  @include small-tablet{
+    overflow: initial;
+    width: calc(100% + (var(--container-offset) * 2));
+    margin-left: calc(var(--container-offset) * -1);
+}
+
+&__wrapp{
+    @include small-tablet{
+        padding: 0 var(--container-offset) !important;
+    }
+}
+
+  .splide{
+    &__arrows{
+        display: flex;
+        grid-gap: 5px;
+        position: absolute;
+        bottom: 25px;
+        right: 20px;
     }
 
-    &:not(.is-active){
-        .h2o-bonus-slider__box{
-            transform: translateX(10%);
+    &__pagination{
+      bottom: 5px;
+      &__page{
+          background: rgba(var(--bg-a),1.0);
+          opacity: 0.5;
+          width: 7px;
+          height: 7px;
+          &.is-active{
+              opacity: 1;
+              transform: scale(1.2);
+          }
+      }
+  }
+
+    &__arrow{
+        transition: all 0.3s linear;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(35px, 3.1373vw, 40px);
+        height: clamp(35px, 3.1373vw, 40px);
+        color: rgba(var(--cl-a),1.0);
+        background-color: rgba(var(--bg-a),.1);
+        border-radius: 2px;
+        transform: skew(-10deg, 0);
+        opacity: 1;
+        position: static;
+
+        svg{
+            transform: skew(10deg);
+            fill: rgba(var(--cl-a),1.0);
         }
-    }
-
-    &:hover{
-        .h2o-bonus-slider__box::before{
+        &:disabled{
             opacity: .5;
         }
-    }
+        &:hover{
+            background: rgba(var(--bg-a),.2);
+        }
 
-    &.is-prev{
-        transition: all .2s;
-        opacity: 0;
-        visibility: hidden;
-    }
+        &--prev{
+            left: 0;
 
-    &.is-active {
-      z-index: 30 !important;
-
-      &::before{
-        display: none;
-      }
-
-      .h2o-bonus-slider{
-        &__box{
-            transform: translateX(0);
-
-            &::before{
-                opacity: 0;
+            svg{
+                transform: skew(10deg) rotate(180deg);
             }
         }
 
-        &__image{
-            img,
-            picture {
-              object-position: left;
-            }
-        }
-      }
-    }
-
-    @include mobile{
-        min-width: 200px;
-    }
-  }
-
-  &__box {
-    height: 100%;
-    transition: all .6s;
-    border-radius: 15px;
-    overflow: hidden;
-
-    &::before{
-        background: rgba(var(--bg-o),.451);
-        border-radius: 15px;
-        bottom: 0;
-        content: "";
-        left: 0;
-        outline: none;
-        position: absolute;
+        &--next{
         right: 0;
-        top: 0;
-        transition: opacity .2s ease;
     }
-
-    @include mobile{
-        max-height: clamp(170px, 34.722vw, 200px);
-      }
-  }
-
-  &__image {
-    width: 100%;
-    height: 100%;
-    img,
-    picture {
-        max-width: 680px;
-        max-height: 274px;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  &__bg {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    img,
-    picture {
-      width: 100%;
-      height: 100%;
-    }
-  }
+}
+}
 }

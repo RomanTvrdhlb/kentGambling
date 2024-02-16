@@ -1,7 +1,7 @@
 .h2o-footer-nav{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: clamp(15px, 1.5686vw, 20px);
 
     &__list{
         display: flex;
@@ -21,6 +21,23 @@
 
         &:hover{
             color: rgba(var(--cl-d),1.0);
+        }
+
+        @include small-tablet{
+            padding: 2px 0;
+        }
+    }
+
+    @include mobile{
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    #h2o-list3{
+        @include mobile{
+            display: none;
         }
     }
 }

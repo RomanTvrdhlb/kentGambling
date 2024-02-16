@@ -13,11 +13,14 @@ const loyaltySlider = document.querySelector('.h2o-loyalty-slider');
 const timers = document.querySelectorAll('.h2o-timer');
 const gamesSlider = document.querySelector('.h2o-games-slider');
 const tournSlider = document.querySelector('.h2o-tournament-slider');
-const bonuSlider = document.querySelector('.h2o-bonus-slider');
+const bonusSliders = document.querySelectorAll('.h2o-bonus-slider');
+const bannerSlider = document.querySelector('.h2o-banner-slider');
+let list1 = document.getElementById("h2o-list1");
+let list2 = document.getElementById("h2o-list2");
+let list3 = document.getElementById("h2o-list3");
 
 
-// const bonusSliderElement = document.querySelector('.h2o-bonus-slider');
-// const slides = document.querySelectorAll('.h2o-bonus-slider__slide');
+
 const asideMenu = document.querySelector('.h2o-sidebar');
 const asideMenuBtn = document.querySelector('.h2o-aside-button');
 const searchForms = document.querySelectorAll('.h2o-search-form');
@@ -276,13 +279,28 @@ providersSlider &&
       }
   }).mount();
 
-  bonuSlider &&
-  new Splide(bonuSlider, {
-    type: "slide",
-    perPage: 1,
-    gap: 15,
-    pagination:false,
-  }).mount();
+
+  bonusSliders.forEach(function(bonuSlider, index){
+    bonuSlider &&
+    new Splide(bonuSlider, {
+      type: "loop",
+      perPage: 1,
+      gap: 10,
+      pagination:false,
+      mediaQuery: 'max',
+      autoplay: true,
+      speed: 1400,
+      interval: index === 1 ? 4800 : 3500,
+      breakpoints: {
+      768: {
+        pagination: true,
+        arrows: false,
+        gap:16,
+      },
+    }
+    }).mount();
+  })
+
 
   tournSlider &&
   new Splide(tournSlider, {
@@ -309,6 +327,7 @@ providersSlider &&
       1024: {
         fixedWidth: '185px',
         arrows: false,
+        pagination:true,
       },
       576: {
         perPage: 2,
@@ -346,29 +365,38 @@ providersSlider &&
     perPage: 5,
     speed: 1500,
     gap: 20,
-    // pagination:false,
-    // mediaQuery: 'max',
-    // grid: {
-    //   rows: 2,
-    //   cols: 5,
-    // },
-    
-    // breakpoints: {
-    //   1024: {
-    //     perPage: 4,
-       
-    //   },
-    //   768: {
-    //     perPage: 3,
-    //     arrows: false,
-    //   },
-    //   576: {
-    //     perPage: 2,
-    //     fixedWidth: '180px'
-    //   }
-    // }
+    pagination:false,
+    grid: {
+      rows: 2,
+      cols: 5,
+    },
+
 
   } ).mount(); 
+
+  bannerSlider && new Splide( bannerSlider, {
+    type   : 'slide',
+    perPage: 3,
+    speed:1200,
+    mediaQuery: 'min',
+    breakpoints: {
+      280: {
+        autoWidth: true,
+        perPage: 1,
+        arrows:false,
+      },
+      768:{
+        arrows:true,
+      },
+      1024: {
+        pagination:false,
+        arrows:false,
+        drag:false,
+        perPage: 2,
+        gap:0,
+      },
+    }
+  } ).mount();
   
 
 //----stickyHeader------------------------------
@@ -458,4 +486,34 @@ function formatedValue(value, countValue) {
   return value < countValue ? '0' + value : '' + value
 }
 
-//----------------------------------------------
+//----replaceNav---------------------------------
+function splitList(sourceList) {
+  const halfLength = Math.floor(sourceList.children.length / 2);
+  const firstHalf = Array.from(sourceList.children).slice(0, halfLength);
+  const secondHalf = Array.from(sourceList.children).slice(halfLength);
+  return { firstHalf, secondHalf };
+}
+
+function moveItems(sourceList, targetList, items) {
+  items.forEach(function (item) {
+    targetList.appendChild(item);
+  });
+}
+
+const originalItems = Array.from(list3.children);
+
+function checkWindowWidth() {
+  const windowWidth = window.innerWidth;
+
+  if (windowWidth <= 576) {
+    const { firstHalf, secondHalf } = splitList(list3);
+    moveItems(list3, list1, firstHalf);
+    moveItems(list3, list2, secondHalf);
+  } else {
+    moveItems(list1, list3, originalItems.filter(item => list1.contains(item)));
+    moveItems(list2, list3, originalItems.filter(item => list2.contains(item)));
+  }
+}
+
+checkWindowWidth();
+window.addEventListener("resize", checkWindowWidth);

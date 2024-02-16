@@ -15,6 +15,14 @@
     justify-content: space-between;
     width: 100%;
 
+    @include small-tablet{
+        overflow-x: auto;
+        width: calc(100% + (var(--container-offset) * 2));
+        margin-left: calc(var(--container-offset) * -1);
+        padding-left: var(--container-offset);
+
+    }
+
     &__list{
         display: flex;
         align-items: center;
@@ -23,9 +31,7 @@
     &__btns{
         display: flex;
         align-items: center;
-
         .h2o-main-nav__btn{
-            
             i{
                 transform: skew(10deg, 0); 
             }
@@ -64,6 +70,14 @@
                 width: 110px;
                 opacity: 1;
                 padding: 0 30px;
+
+                @include small-tablet{
+
+                    &:not(.h2o-main-nav__btn--mode){
+                    padding: 0 0 0 clamp(15px, 1.5686vw, 20px);
+                    width: fit-content;
+                    }
+                }
             }
 
             i{
@@ -79,6 +93,12 @@
             overflow: hidden;
             transition: all ease .4s;
             font-weight: 400;
+
+            @include small-tablet{
+                width: fit-content;
+                opacity: 1;
+                padding: 0 0 0 clamp(15px, 1.5686vw, 20px);
+            }
         }
 
         &--mode{
@@ -100,7 +120,10 @@
                 opacity: 1;
                 padding: 0 30px;
             }
-          
+            
+            @include small-tablet{
+                margin-left: 0;
+            }
         }
     }
 }
