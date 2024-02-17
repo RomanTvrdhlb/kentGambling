@@ -59,10 +59,18 @@
                 svg{
                     transform: skew(10deg) rotate(180deg);
                 }
+
+                @include tablet{
+                    left: 20px;
+                }
             }
     
             &--next{
             right: 10px;
+
+            @include tablet{
+                right: 20px;
+            }
         }
     }
     }

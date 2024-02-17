@@ -6,14 +6,34 @@
         margin-left: calc(var(--container-offset) * -1);
     }
 
-
     &__wrapp{
         @include tablet{
             padding: 0 var(--container-offset) !important;
         }
     }
 
+    &__list{
+        min-height: 455px;
+
+        @include mobile{
+            min-height: initial;
+        }
+    }
+
     .splide{
+        &__pagination{
+            bottom: -15px;
+            &__page{
+                background: rgba(var(--bg-a),1.0);
+                opacity: 0.5;
+                width: 7px;
+                height: 7px;
+                &.is-active{
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+            }
+        }
         &__arrows{
             display: flex;
             grid-gap: 5px;
@@ -24,6 +44,7 @@
 
             @include tablet{
                 top: -21px;
+                right: 20px;
             }
         }
 

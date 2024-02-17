@@ -6,6 +6,12 @@
   }
 }
 
+@mixin for-notebook {
+  @media (min-width: (1750px)) {
+    @content;
+  }
+}
+
 @mixin for-desktop {
   @media (min-width: (1440px)) {
     @content;

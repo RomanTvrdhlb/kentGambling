@@ -3,9 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-height: 140px;
-    // width: 100%;
-    
+    min-height: 140px;   
     padding: 55px 20px 10px;
     text-align: left;
     overflow: hidden;
@@ -46,6 +44,7 @@
     &__title{
         overflow: hidden;
         text-overflow: ellipsis;
+        text-transform: uppercase;
         word-break: break-word;
         display: block;
         transform: skew(30deg);

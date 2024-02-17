@@ -32,7 +32,8 @@
         display: flex;
         align-items: center;
         .h2o-main-nav__btn{
-            i{
+            i{  
+                filter: grayscale(100%) brightness(10);
                 transform: skew(10deg, 0); 
             }
             &:nth-child(2){
@@ -42,6 +43,7 @@
 
             &:hover{
                 i{
+                    filter: none;
                 animation: none;
             }
         }

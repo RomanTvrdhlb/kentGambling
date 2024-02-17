@@ -1,13 +1,13 @@
 .h2o-loyalty-slider{
     width: 100%;
 
-    @include mobile{
+    @include tablet{
         width: calc(100% + (var(--container-offset) * 2));
         margin-left: calc(var(--container-offset) * -1);
     }
 
     &__wrapp{
-        @include mobile{
+        @include tablet{
             padding: 0 var(--container-offset) !important;
         }
     }
@@ -23,6 +23,7 @@
 
             @include tablet{
                 top: -21px;
+                right: 20px;
             }
         }
 
@@ -57,10 +58,12 @@
                 svg{
                     transform: skew(10deg) rotate(180deg);
                 }
+
             }
 
             &--next{
             right: 0;
+
         }
     }
     }

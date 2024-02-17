@@ -1,10 +1,12 @@
 //-----vars---------------------------------------
-const header = document.querySelector("header");
+const header = document.querySelector(".h2o-header");
 const overlay = document.querySelector("[data-overlay]");
 const mobileMenu = document.querySelector(".h2o-mobile-menu");
 const burgers = document.querySelectorAll(".h2o-burger");
 const mainSlider = document.querySelector(".h2o-main-slider");
 const accParrent = [...document.querySelectorAll("[data-accordion-init]")];
+const asideMenu = document.querySelector("[data-aside]");
+const asideMenuBtn = document.querySelector(".h2o-aside-menu__btn");
 const htmlEl = document.documentElement;
 const bodyEl = document.body;
 const providersSlider = document.querySelector('.h2o-providers-slider');
@@ -18,12 +20,9 @@ const bannerSlider = document.querySelector('.h2o-banner-slider');
 let list1 = document.getElementById("h2o-list1");
 let list2 = document.getElementById("h2o-list2");
 let list3 = document.getElementById("h2o-list3");
+const accBtns = asideMenu.querySelectorAll('.h2o-nav-acc');
+const asideBtns = asideMenu.querySelectorAll('.h2o-aside-nav__btn');
 
-
-
-const asideMenu = document.querySelector('.h2o-sidebar');
-const asideMenuBtn = document.querySelector('.h2o-aside-button');
-const searchForms = document.querySelectorAll('.h2o-search-form');
 
 //------------------------------------------------
 
@@ -47,6 +46,12 @@ const removeClassInArray = (arr, customClass = "active") => {
 const addCustomClass = (item, customClass = "active") => {
   item.classList.add(customClass);
 };
+
+const addClassInArray = (arr, customClass) => {
+  arr.forEach((item) => {
+    item.classList.add(customClass);
+  });
+}
 
 const removeCustomClass = (item, customClass = "active") => {
   item.classList.remove(customClass);
@@ -97,19 +102,33 @@ const elementHeight = (el, variableName) => {
 //------------------------------------------------
 
 //----asideMenuHandler----------------------------
-asideMenu && asideMenuBtn &&
-  asideMenuBtn.addEventListener("click", function (e) {
+function asideMenuHandler(){
+  asideMenu && asideMenuBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    addCustomClass(asideMenu, 'active');
+    toggleClassInArray(accBtns, 'disabled')
+    toggleClassInArray(asideBtns, 'disabled')
+    toggleCustomClass(asideMenu);
+    toggleCustomClass(asideMenuBtn);
   });
+}
 
 //----asideMenuClose-----------------------------
-asideMenu && asideMenuBtn &&
+function asideMenuHide() {
+  removeCustomClass(asideMenu);
+  removeCustomClass(asideMenuBtn);
+  addClassInArray(asideBtns, 'disabled');
+  addClassInArray(accBtns, 'disabled');
+};
+
+if(asideMenu){
+ 
+  asideMenuHandler();
   document.addEventListener("click", function (event) {
     if (!asideMenu.contains(event.target) && !asideMenuBtn.contains(event.target)) {
-      removeCustomClass(asideMenu, 'active');
+      asideMenuHide();
     }
   });
+}
  
 //----accordion----------------------------------
 window.addEventListener("DOMContentLoaded", () => {
@@ -247,7 +266,7 @@ const hideMenuHandler = function (overlay, mobileMenu, burgers) {
 if (overlay) {
   mobileMenuHandler(overlay, mobileMenu, burgers);
   overlay.addEventListener("click", function (e) {
-    e.target.classList.contains("overlay")
+    e.target.classList.contains("h2o-overlay")
       ? hideMenuHandler(overlay, mobileMenu, burgers)
       : null;
   });
@@ -300,7 +319,6 @@ providersSlider &&
     }
     }).mount();
   })
-
 
   tournSlider &&
   new Splide(tournSlider, {
@@ -362,18 +380,60 @@ providersSlider &&
 
   gamesSlider && new Splide( gamesSlider, {
     type   : 'slide',
-    perPage: 5,
     speed: 1500,
-    gap: 20,
+    gap:20,
+    fixeHeight: '259px',
     pagination:false,
     grid: {
       rows: 2,
-      cols: 5,
+      cols: 6,
+      gap:{
+        row:0,
+        col:20,
+      }
     },
-
-
-  } ).mount(); 
-
+    breakpoints: {
+      1240: {
+        grid: {
+          rows: 2,
+          cols: 5,
+        },
+      },
+      850: {
+        grid: {
+          rows: 2,
+          cols: 4,
+        },
+      },
+      768: {
+        arrows: false,
+        pagination:true,
+      },
+      650: {
+        grid: {
+          rows: 2,
+          cols: 3,
+        }, 
+      },
+      576: {
+        grid: {
+          rows: 2,
+          cols: 2,
+          gap:{
+            row:20,
+          }
+        }, 
+      },
+      380: {
+        grid: {
+          rows: 2,
+          cols: 1,
+       
+        }, 
+      },
+    }
+  } ).mount(window.splide.Extensions); 
+ 
   bannerSlider && new Splide( bannerSlider, {
     type   : 'slide',
     perPage: 3,
@@ -425,38 +485,7 @@ function stickyHeaderFunction(breakpoint){
 stickyHeaderFunction(320);
 elementHeight(header, "header-height");
 
-//------search----------------------------------
-// searchForms && searchForms.forEach(function(form){
-//   const input = form.querySelector('input');
-//   const value = input.value;
-//   const clearBtn = form.querySelector('.h2o-search-form__clear');
-
-
-//   clearBtn.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     input.value = '';
-//     removeCustomClass(clearBtn, 'active');
-//   });
-
-//   input.addEventListener('blur', function () {
-//     removeCustomClass(clearBtn, 'active');
-//   });
-
-//   input.addEventListener('input', function () {
-//     updateButtonClass();
-//   });
-
-//   function updateButtonClass() {  
-//     if (value.trim() !== '') {
-//       removeCustomClass(clearBtn, 'active')
-//     } else {
-//       addCustomClass(clearBtn, 'active');
-//     }
-//   }
-// })
-
 //------timer-----------------------------------
-
 
 timers && timers.forEach(function(item){  
   const itemDate = item.getAttribute('data-time');
