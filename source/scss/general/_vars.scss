@@ -58,7 +58,6 @@
   --bg-j: #{HexToRGB(#1b000c)}; // rgba(var(--bg-j),1.0);
   --bg-k: #{HexToRGB(#251119)}; // rgba(var(--bg-k),1.0);
 
-
 // --------------- default border color color variable ---------------
   --br-a: #321a25; // var(--br-a);
   --br-b: #f06; // var(--br-b);
@@ -67,9 +66,6 @@
   --br-e: #ff3385; // var(--br-e);
   --br-f: #854c63; // var(--br-f);
   --br-g: #28121b; // var(--br-g);
-
-
-// -------------
 
 // --------------- default gradient color variable ---------------
 --gr-a: linear-gradient(120deg, transparent, rgba(146, 148, 248, 0.4), transparent); // var(--gr-a);
