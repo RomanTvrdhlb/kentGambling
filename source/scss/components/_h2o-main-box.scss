@@ -5,7 +5,7 @@
 
     p{
       color: rgba(var(--cl-a),1.0);
-      font-size: clamp(14px, 1.1511vw, 16px);
+      font-size: 14px;
       line-height: 110%;
       font-family: var(--font-family);
       font-weight: 400;
@@ -21,7 +21,7 @@
       justify-content: center;
 
       &--mode{
-        padding: clamp(5px, 1.1511vw, 16px) 0 clamp(16px, 2.3022vw, 32px);
+        padding: clamp(5px, 1.2549vw, 16px) 0 clamp(16px, 2.5098vw, 32px);
       }
     }
 

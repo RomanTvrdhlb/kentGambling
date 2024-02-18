@@ -49,6 +49,12 @@
   }
 }
 
+@mixin notebook {
+  @media (max-height: (900px)) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (max-width: (1440px)) {
     @content;

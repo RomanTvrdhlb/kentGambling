@@ -13,6 +13,9 @@
     flex-direction: column;
     grid-gap: 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    &::-webkit-scrollbar{
+        display: none;
+    }
 
     @include for-notebook{
         top: 0;
@@ -23,11 +26,17 @@
     &.active{
         max-width: 230px;
         padding: 10px;
+        overflow-y: auto;
         .h2o-logo-aside{
             display: flex;
         }
+        .panel, [data-content]{
+            transition: max-height 0.2s;
+        }
     }
-
+    .panel, [data-content]{
+        transition: 0s;
+    }
     .h2o-logo-aside{
         display: none;
     }

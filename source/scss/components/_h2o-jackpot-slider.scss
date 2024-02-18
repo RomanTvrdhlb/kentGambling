@@ -16,12 +16,12 @@
 
     .splide{
         &__pagination{
-            bottom: -20px;
+            bottom: -23px;
             &__page{
                 background: rgba(var(--bg-a),1.0);
                 opacity: 0.5;
-                width: 7px;
-                height: 7px;
+                width: 6px;
+                height: 6px;
                 &.is-active{
                     opacity: 1;
                     transform: scale(1.2);

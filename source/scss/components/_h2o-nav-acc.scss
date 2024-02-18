@@ -165,6 +165,8 @@
             }
         }
         
+        
+
         &:hover{
             [data-content]{
                 height: 100%;
@@ -204,4 +206,26 @@
             }
         }
     }
+
+    &--mode{
+        @include notebook{
+
+        &.disabled{
+
+
+            &:hover{
+                [data-content]{
+                    top: -50%;
+                    min-height: 483px;
+                    transform: translate(110%, -61%);
+          
+                    &::before{
+                      top: initial;
+                      bottom: 29%;
+                    }
+                  }
+            }
+    }
+}    
+}
 }

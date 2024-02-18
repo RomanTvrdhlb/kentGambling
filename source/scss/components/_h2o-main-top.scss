@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-
+  grid-gap: 5px;
   &__link{
     font-family: var(--font-family);
     color: rgba(var(--cl-d),1.0);

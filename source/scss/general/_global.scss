@@ -33,12 +33,12 @@ main {
 }
 
 footer,header,main{
-  @include for-tablet{
-    padding-left: 48px !important;
-  }
-  @include for-notebook{
-    padding-left: 0 !important;
-  }
+    @include for-tablet{
+      padding-left: 48px !important;
+    }
+    @include for-notebook{
+      padding-left: 0 !important;
+    }
 }
 
 *,

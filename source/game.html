@@ -6,6 +6,109 @@
   @include('partials/header.html')
 
   <main>
+
+    <div class="h2o-aside-menu" data-aside>
+      <div class="h2o-aside-menu__top">
+        <a href="index.html" class="h2o-logo-aside">
+          <i class="h2o-icon-aside"></i>
+        </a>
+        <button class="h2o-aside-menu__btn">
+          <i class="h2o-icon-burger"></i>
+        </button>
+      </div>
+      <div class="h2o-aside-menu__box">
+        <ul class="h2o-aside-nav">
+          <li class="h2o-aside-nav__item">
+            <div class='h2o-nav-acc disabled' data-single='true' data-breakpoint='576' data-accordion-init>
+              <div class='h2o-nav-acc__item'>
+
+                <button class='h2o-nav-acc__btn' data-id='1'><i class="h2o-icon-ball"></i><b>Казино</b>
+                </button>
+                <div class='h2o-nav-acc__content' data-content='1'>
+                  <ul class="h2o-nav-acc__list">
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-briliant"></i>Слоты</button></li>
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-popular"></i>Новые</button></li>
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-like"></i>Популярные</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="h2o-aside-nav__item">
+            <button class="h2o-reg h2o-aside-nav__btn disabled"><i class="h2o-icon-tie"></i><b>Лайф Казино</b></button>
+          </li>
+          <li class="h2o-aside-nav__item">
+            <button class="h2o-reg h2o-aside-nav__btn disabled"><i class="h2o-icon-rocket"></i><b>Быстрые игры</b></button>
+          </li>
+          <li class="h2o-aside-nav__item">
+            <div class='h2o-nav-acc disabled' data-single='true' data-breakpoint='576' data-accordion-init>
+              <div class='h2o-nav-acc__item'>
+
+                <button class='h2o-nav-acc__btn h2o-nav-acc__btn--mode' data-id='1'><i class="h2o-icon-promo"></i>
+                  <b>Промо</b>
+                </button>
+                <div class='h2o-nav-acc__content' data-content='1'>
+                  <ul class="h2o-nav-acc__list">
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-loyalty"></i>Лояльность</button></li>
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-promo"></i>Акции</button></li>
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-cup"></i>Турниры</button></li>
+                    <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                          class="h2o-icon-casino"></i>Лотерея</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="h2o-aside-menu__inner">
+          <ul class="h2o-aside-nav">
+            <li class="h2o-aside-nav__item">
+              <button class="h2o-reg h2o-aside-nav__btn disabled"><i class="h2o-icon-mail"></i><b>Поддержка</b></button>
+            </li>
+            <li class="h2o-aside-nav__item">
+              <div class='h2o-nav-acc h2o-nav-acc--mode disabled' data-single='true' data-breakpoint='576' data-accordion-init>
+                <div class='h2o-nav-acc__item'>
+
+                  <button class='h2o-nav-acc__btn' data-id='1'><i class="h2o-icon-info"></i>
+                    <b>Информация</b>
+                  </button>
+                  <div class='h2o-nav-acc__content' data-content='1'>
+                    <ul class="h2o-nav-acc__list">
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link">Политика вывода и
+                        возврата</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link">Политика AML и
+                        KYC</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link">Правила и условия для
+                        бонусов</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                            class="h2o-icon-key"></i>Политика Конфиденциальности</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                            class="h2o-icon-hand"></i>Ответственная игра</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                            class="h2o-icon-man"></i>Честная Игра</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                            class="h2o-icon-rules"></i>Правила игр</button></li>
+                      <li class="h2o-nav-acc__item"><button class="h2o-reg h2o-nav-acc__link"><i
+                            class="h2o-icon-note"></i>Условия использования услуг</button></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <button class="h2o-aside-menu__social h2o-reg"><i class="h2o-icon-social"></i></button>
+      </div>
+    </div>
+
     <section class="h2o-play-section">
       <div class="h2o-container">
         <div class="h2o-play-section__box">
@@ -23,8 +126,8 @@
               fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
               justo.</p>
             <div class="h2o-play-card__btns">
-              <button class="h2o-more h2o-orange-button">Играть</button>
-              <a href="index.html" class="h2o-blue-button">Назад</a>
+              <button class="h2o-reg h2o-blue-button"><b>Играть</b></button>
+              <a href="index.html" class="h2o-pink-button"><b>Назад</b></a>
             </div>
           </div>
         </div>

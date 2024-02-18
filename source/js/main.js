@@ -22,8 +22,6 @@ let list2 = document.getElementById("h2o-list2");
 let list3 = document.getElementById("h2o-list3");
 const accBtns = asideMenu.querySelectorAll('.h2o-nav-acc');
 const asideBtns = asideMenu.querySelectorAll('.h2o-aside-nav__btn');
-
-
 //------------------------------------------------
 
 //----customFunction------------------------------
@@ -105,6 +103,9 @@ const elementHeight = (el, variableName) => {
 function asideMenuHandler(){
   asideMenu && asideMenuBtn.addEventListener("click", function (e) {
     e.preventDefault();
+    if(asideMenuBtn.classList.contains('active')){
+      asideAccClose();
+    }
     toggleClassInArray(accBtns, 'disabled')
     toggleClassInArray(asideBtns, 'disabled')
     toggleCustomClass(asideMenu);
@@ -113,6 +114,15 @@ function asideMenuHandler(){
 }
 
 //----asideMenuClose-----------------------------
+function asideAccClose() {
+  const asideAcordions = asideMenu.querySelectorAll('[data-accordion-init]');
+  asideAcordions.forEach(function(acordion){
+    removeCustomClass(acordion.querySelector('.h2o-nav-acc__btn'), 'active');
+    removeCustomClass(acordion.querySelector('.h2o-nav-acc__content'), 'active');
+    acordion.querySelector('.h2o-nav-acc__content').style.maxHeight = "0";
+  })
+}
+
 function asideMenuHide() {
   removeCustomClass(asideMenu);
   removeCustomClass(asideMenuBtn);
@@ -121,10 +131,10 @@ function asideMenuHide() {
 };
 
 if(asideMenu){
- 
   asideMenuHandler();
   document.addEventListener("click", function (event) {
     if (!asideMenu.contains(event.target) && !asideMenuBtn.contains(event.target)) {
+      asideAccClose();
       asideMenuHide();
     }
   });
@@ -297,7 +307,6 @@ providersSlider &&
         }
       }
   }).mount();
-
 
   bonusSliders.forEach(function(bonuSlider, index){
     bonuSlider &&
@@ -546,3 +555,4 @@ function checkWindowWidth() {
 
 checkWindowWidth();
 window.addEventListener("resize", checkWindowWidth);
+//-----------------------------------------------
